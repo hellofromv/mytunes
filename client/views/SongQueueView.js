@@ -7,21 +7,13 @@ var SongQueueView = Backbone.View.extend({
   },
 
   render: function() {
-    // this.subView = new SongQueueEntryView();
-    // this.subView();
-    // this.$el.find('tr').append(this.collection.map(function(song) {
-    //   // return '<td>' + song.get('title') + '</td>';
-    //   this.subView();
-    // }));
-    // var html = [
-    //   '<td>',
-    //     this.model.get('artist'),
-    //     this.model.get('title'),
-    //   '</td>'
-    // ].join('');
 
-
-    return this.$el;
+    console.log(this.$el);
+    this.$el.html('<th>Library</th>').append(
+      this.collection.map(function(song) {
+        return new SongQueueEntryView({model: song}).render();
+      })
+    );
   }
 
 });
