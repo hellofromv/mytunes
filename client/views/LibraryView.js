@@ -8,6 +8,7 @@ var LibraryView = Backbone.View.extend({
     this.render();
 
     this.collection.on('reset', this.render, this);
+    // console.log(this.model.get('library'));
   },
 
   render: function() {
